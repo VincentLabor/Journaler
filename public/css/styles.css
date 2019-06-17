@@ -1,32 +1,40 @@
 body{
     margin: 0;
+    text-align: center;
 }
 
 /* Navigation bar */
 nav {
     background: #ded5d5;
     padding: 20px;
+    
 }
 
 .nameOfWebsite{
-    display: inline;
+    justify-content: flex-start;
 }
 
+.navLinks{
+    justify-content: space-evenly;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
 ul {
     list-style-type: none;
+    
 }
 
 li{
     display: inline;
     margin: 10px;
+    
 }
 
-.navLinks{
-   float:right;
+a{
+    text-decoration: none;
 }
-
-h2{
-    margin: 0;
-}
-
 
