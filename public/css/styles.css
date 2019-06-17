@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+}
+
+/* Navigation bar */
+nav {
+    background: #ded5d5;
+    padding: 20px;
+}
+
+.nameOfWebsite{
+    display: inline;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li{
+    display: inline;
+    margin: 10px;
+}
+
+.navLinks{
+   float:right;
+}
+
+h2{
+    margin: 0;
+}
+
+
