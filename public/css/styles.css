@@ -1,6 +1,6 @@
-body{
+body {
     margin: 0;
-    text-align: center;
+
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -11,12 +11,12 @@ nav {
     color: white;
 }
 
-.navLinks{
+.navLinks {
     justify-content: space-evenly;
     margin-left: auto;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: row;
 }
@@ -25,14 +25,52 @@ ul {
     list-style-type: none;
 }
 
-li{
+li {
     display: inline;
     margin: 10px;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
 /* Home page */
+.contentContainer {
+    margin: 25px 35rem;
+    display: flex;
+}
+
+
+.blogPost {
+    padding: 10px 4em 3em 4em;
+    margin: .5em 6em .5em 6em;
+    border: 2px solid silver;
+    border-radius: 20px;
+}
+
+/* Login Page & Register page*/
+.mt5 {
+    margin: 3rem 390px 3rem 390px;
+    background: #F5F5F5;
+    border-radius: .25rem;
+}
+
+#loginText {
+    display: block;
+}
+
+#passwordText {
+    display: block;
+}
+
+.loginTitle{
+    margin-bottom: .5rem;
+}
+/* Footer */
+footer {
+    margin: 120px;
+    background: black;
+    color: white;
+    text-align: center;
+}
