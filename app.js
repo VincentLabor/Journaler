@@ -16,6 +16,23 @@ db.once('open', function() {
   console.log("We are connected to the database!")
 });
 
+var blogSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+    blogPost: [{
+        title: String,
+        content: String
+    }]
+})
+
+var Blog = mongoose.model("Blog", blogSchema);
+
+var vBlog = new Blog({
+    username: "lamnbda@1.com"
+});
+
+vBlog.save();
+
 app.set('view engine', 'ejs');
 
 app.get("/", (req,res) => res.render("home"));
