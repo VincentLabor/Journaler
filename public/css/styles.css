@@ -1,7 +1,15 @@
 body {
     margin: 0;
-
+    background: #F5F5F5;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn{
+    padding: 10px 14px;
+    background-color: #333333;
+    border: 3px solid #F5F5F5;
+    border-radius: 10px;
+    color: white;
 }
 
 /* Navigation bar */
@@ -16,7 +24,7 @@ nav {
     margin-left: auto;
 }
 
-.container {
+.navContainer {
     display: flex;
     flex-direction: row;
 }
@@ -47,13 +55,20 @@ a {
     margin: .5em 6em .5em 6em;
     border: 2px solid silver;
     border-radius: 20px;
+    box-shadow: 3px 5px 10px black;
 }
 
 /* Login Page & Register page*/
 .mt5 {
     margin: 3rem 390px 3rem 390px;
-    background: #F5F5F5;
-    border-radius: .25rem;
+    background: white;
+    border-radius: .75rem;
+    padding: 2rem;
+    box-shadow: 3px 5px 10px black;
+}
+
+.credbox {
+    box-sizing: box-border;
 }
 
 #loginText {
@@ -64,9 +79,18 @@ a {
     display: block;
 }
 
-.loginTitle{
+.loginTitle {
     margin-bottom: .5rem;
 }
+
+.forms{
+    border-radius: 7px;
+    margin: 10px 0px 20px 0px;
+    width: 90%;
+    border: 1px solid silver;
+    padding: 10px;
+}
+
 /* Footer */
 footer {
     margin: 120px;
