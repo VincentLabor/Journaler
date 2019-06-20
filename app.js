@@ -59,31 +59,50 @@ var vBlog = new User({
 });
 
 passport.use(User.createStrategy());
- 
+
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get("/", (req, res) => res.render("home"));
 
 app.route("/login")
-.get((req, res) => res.render("login"))
+  .get((req, res) => res.render("login"))
 
-.post((req,res) => console.log("you logged in"));
+  .post((req, res) => {
+    const user = new User({
+      username: req.body.username,
+      password: req.body.password
+    });
+
+    req.login(user, function (err) {
+      if (err) {
+        console.log(err);
+        res.redirect('/login');
+      } else {
+        passport.authenticate('local')(req, res, function () {
+          res.redirect('/')
+        })
+      }
+    })
+  });
 
 app.route("/register")
   .get((req, res) => res.render("register"))
 
   .post((req, res) => {
-    User.register({username: req.body.username, active: false}, req.body.password, function(err, user) {
+    User.register({
+      username: req.body.username,
+      active: false
+    }, req.body.password, function (err, user) {
       if (err) {
         console.log(err);
-      } else{
-        passport.authenticate('local')(req,res,function(){
+      } else {
+        passport.authenticate('local')(req, res, function () {
           res.redirect("/");
         })
       }
-  })
-});
+    })
+  });
 
 
 
