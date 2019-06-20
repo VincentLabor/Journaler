@@ -58,6 +58,22 @@ a {
     box-shadow: 3px 5px 10px black;
 }
 
+/* Post page */
+.Container{
+    margin: 25%;
+    background: #A9A9A9;
+    border-radius: 20px;
+}
+
+.textarea{
+    display: block;
+    margin: 0 auto;
+}
+
+#textContent{
+width: 500px;
+}
+
 /* Login Page & Register page*/
 .mt5 {
     margin: 3rem 390px 3rem 390px;

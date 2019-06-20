@@ -104,7 +104,14 @@ app.route("/register")
     })
   });
 
+app.route('/posts')
+  .get((req, res) => {
+    res.render('posts')
+  })
 
+  .post((req, res) => {
+    console.log('hi');
+  })
 
 
 app.listen(3000, () => console.log(`The server is now online`));
