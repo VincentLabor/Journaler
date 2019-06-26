@@ -4,7 +4,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.btn{
+.btn {
     padding: 10px 14px;
     background-color: #333333;
     border: 3px solid #F5F5F5;
@@ -15,13 +15,14 @@ body {
 /* Navigation bar */
 nav {
     background: #333;
-    padding: 20px;
+    padding: 35px;
     color: white;
 }
 
 .navLinks {
     justify-content: space-evenly;
     margin-left: auto;
+
 }
 
 .navContainer {
@@ -36,6 +37,7 @@ ul {
 li {
     display: inline;
     margin: 10px;
+    padding: 5px 10px;
 }
 
 a {
@@ -59,19 +61,33 @@ a {
 }
 
 /* Post page */
-.Container{
+.Container {
     margin: 25%;
     background: #A9A9A9;
     border-radius: 20px;
+    padding: 50px;
 }
 
-.textarea{
+#postTitle{
+    margin: 0;
+}
+
+.textarea {
     display: block;
-    margin: 0 auto;
+    padding: 5px;
+    border: 0px solid;
+    background: transparent;
+    color: aliceblue;
 }
 
-#textContent{
-width: 500px;
+#titleArea{
+    font-size: 45px;
+}
+
+#textContent {
+    width: 600px;
+    height: 200px;
+    
 }
 
 /* Login Page & Register page*/
@@ -99,7 +115,7 @@ width: 500px;
     margin-bottom: .5rem;
 }
 
-.forms{
+.forms {
     border-radius: 7px;
     margin: 10px 0px 20px 0px;
     width: 90%;
