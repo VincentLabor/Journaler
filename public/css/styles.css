@@ -60,12 +60,18 @@ a {
     box-shadow: 3px 5px 10px black;
 }
 
-/* Post page */
-.Container {
-    margin: 25%;
+/* Post function */
+
+.postFunction{
+    margin: 12px 34.5%;
     background: #A9A9A9;
     border-radius: 20px;
-    padding: 50px;
+    padding: 10px;
+    z-index: 3;
+    top: 30%;
+    visibility: hidden;
+    width:0px;
+    height:0px;
 }
 
 #postTitle{
@@ -85,9 +91,16 @@ a {
 }
 
 #textContent {
-    width: 600px;
-    height: 200px;
-    
+    width: 535px;
+    height: 250px;
+    font-size: 18px;
+}
+
+#postBtn{
+    background: white; 
+    border: solid 0px;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 /* Login Page & Register page*/
