@@ -111,7 +111,8 @@ app.route('/posts')
 
   .post((req, res) => {
     console.log('hi');
-  })
+  });
+
 
 
 app.listen(3000, () => console.log(`The server is now online`));

@@ -1,20 +1,22 @@
 <%-  include('partials/header') %>
 
 <div class="Container">
-    <div class="textinput">
+    <div id="postFunction" class="hiddenElement">
         <div class="textinput">
+            <div class="textinput">
 
-            <input type="text" name="postTitle" id="titleArea" class="textarea" placeholder="Title">
+                <input type="text" name="postTitle" id="titleArea" class="textarea" placeholder="Title">
+            </div>
+            <br>
+            <div class="textarea">
+                <textarea name="textContent" id="textContent" class="textarea" placeholder="Type in your thoughts"
+                    rows="5"></textarea>
+                <!-- <input type="text" name="textContent" id="textContent" class="textarea"> -->
+            </div>
         </div>
-        <br>
-        <div class="textarea">
-            <textarea name="textContent" id="textContent" class="textarea" placeholder="Type in your thoughts"
-                rows="5"></textarea>
-            <!-- <input type="text" name="textContent" id="textContent" class="textarea"> -->
+        <div class="container">
+            <button id="postBtn">Post</button>
         </div>
-    </div>
-    <div class="container">
-        <button id="postBtn">Post</button>
     </div>
 </div>
 
