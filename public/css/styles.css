@@ -159,8 +159,9 @@ footer {
     width: 100%;
     background: #333333;
     color: white;
-    text-align: center;
-    position: fixed;
+     text-align: center;
+    position: fixed; 
     padding: 40px;
     bottom: 0;
+    left: 0;
 }

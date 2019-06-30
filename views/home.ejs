@@ -17,5 +17,15 @@
 </div>
 
 
+<%posts.forEach(function(post){ %>
+<div class="contentContainer">
+    <div class="blogPost">
+        <h1><%= post.title %></h1>
+        <p><%=post.content %></p>
+    </div>
+</div>
+<% }) %>
+
+
 
 <%- include('partials/footer') %>

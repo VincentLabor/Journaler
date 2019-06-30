@@ -40,30 +40,47 @@ db.once('open', function () {
   console.log("We are connected to the database!")
 });
 
-var blogSchema = new mongoose.Schema({
+var userSchema = new mongoose.Schema({
   username: String,
   password: String,
-  blogPost: [{
+  posts: [{
     title: String,
-    content: String
+    ref: String
   }]
 })
 
 //This is what hashes and salts the passwords. 
-blogSchema.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose);
 
-var User = mongoose.model("User", blogSchema);
+var User = mongoose.model("User", userSchema);
 
-var vBlog = new User({
-  username: "lamnbda@1.com"
+var postSchema = new mongoose.Schema({
+  title: String,
+  content: String,
+  user: String
 });
+
+let Post = mongoose.model('Post', postSchema);
 
 passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/", (req, res) => res.render("home"));
+app.get("/", function(req, res){
+
+  Post.find({}, function(err, posts){
+    res.render("home",{
+      posts: posts
+    });
+  })
+});
+
+var kill = new Post({
+  title: "Hello",
+  content: "Words"
+});
+
 
 app.route("/login")
   .get((req, res) => res.render("login"))
@@ -110,7 +127,19 @@ app.route('/posts')
   })
 
   .post((req, res) => {
-    console.log('hi');
+    const title = req.body.title;
+    const content = req.body.content;
+const user = req.user;
+
+console.log(user);
+     const blogPost = new Post({
+       title: title,
+       content: content,
+      //  user: req.user.username
+     })
+
+     blogPost.save();
+    res.redirect("/")
   });
 
 
