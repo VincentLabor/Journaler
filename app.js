@@ -135,7 +135,7 @@ console.log(user);
      const blogPost = new Post({
        title: title,
        content: content,
-      //  user: req.user.username
+        user: user.username
      })
 
      blogPost.save();

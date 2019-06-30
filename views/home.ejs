@@ -1,6 +1,6 @@
 <%-  include('partials/header') %>
 
-<div class="contentContainer">
+<!-- <div class="contentContainer">
     <div class="blogPost">
         <h1>This is a test post Title</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
@@ -14,13 +14,13 @@
             nunc.
             Curabitur tortor. Pellentesque nibh. Aenean quam.</p>
     </div>
-</div>
+</div> -->
 
 
 <%posts.forEach(function(post){ %>
 <div class="contentContainer">
     <div class="blogPost">
-        <h1><%= post.title %></h1>
+        <h1 id="title"><%= post.title %></h1>
         <p><%=post.content %></p>
     </div>
 </div>
