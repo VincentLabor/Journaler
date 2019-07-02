@@ -41,6 +41,8 @@ db.once('open', function () {
 });
 
 var userSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
   username: String,
   password: String,
   posts: [{
@@ -57,7 +59,9 @@ var User = mongoose.model("User", userSchema);
 var postSchema = new mongoose.Schema({
   title: String,
   content: String,
-  user: String
+  user: String,
+  firstName: String,
+  date: Date
 });
 
 let Post = mongoose.model('Post', postSchema);
@@ -67,10 +71,10 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/", function(req, res){
+app.get("/", function (req, res) {
 
-  Post.find({}, function(err, posts){
-    res.render("home",{
+  Post.find({}, function (err, posts) {
+    res.render("home", {
       posts: posts
     });
   })
@@ -108,6 +112,8 @@ app.route("/register")
 
   .post((req, res) => {
     User.register({
+      firstName:req.body.firstName,
+      lastName:req.body.lastName,
       username: req.body.username,
       active: false
     }, req.body.password, function (err, user) {
@@ -129,16 +135,20 @@ app.route('/posts')
   .post((req, res) => {
     const title = req.body.title;
     const content = req.body.content;
-const user = req.user;
+    const user = req.user;
+    let today = new Date();
+    let todaysDate = (today.getMonth()+1)
+    
+    console.log(user);
+    const blogPost = new Post({
+      title: title,
+      content: content,
+      user: user.username,
+      firstName: user.firstName,
+      date: todaysDate
+    })
 
-console.log(user);
-     const blogPost = new Post({
-       title: title,
-       content: content,
-        user: user.username
-     })
-
-     blogPost.save();
+    blogPost.save();
     res.redirect("/")
   });
 

@@ -1,6 +1,9 @@
 * {
     margin: 0 auto;
     padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    /* Max width makes the page fit onto the full viewing screen and overflow-x makes sure to clip any excess that goes beyond the confines of the 100% screen page. */
 }
  h1{
      padding: 10px 0px 30px 0px;
@@ -10,7 +13,6 @@
 }
 
 body {
-    margin: 0;
     background: #F5F5F5;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -25,6 +27,7 @@ body {
 
 /* Navigation bar */
 nav {
+    width: 100%;
     background: #333;
     padding: 35px;
     color: white;
@@ -39,6 +42,10 @@ nav {
 .navContainer {
     display: flex;
     flex-direction: row;
+}
+
+.navMenu{
+    display: inline;
 }
 
 ul {
@@ -58,15 +65,18 @@ a {
 
 /* Home page */
 .contentContainer {
-    margin: 25px 35rem;
+    margin: 75px 35rem;
 }
 
 .blogPost {
+    width: 70%; 
+    /* This is necessary to determine the size of the boxs for the blog messages to appear. */
     padding: 10px 4em 3em 4em;
-    margin: .5em 6em .5em 6em;
-    border: 2px solid silver;
-    border-radius: 20px;
+    border: 1px solid silver;
+    border-radius: 15px;
     box-shadow: 3px 5px 10px black;
+    margin: 10px; 
+    /* The margin is added because without this, the overflow will clip the shadows.*/
 }
 
 /* Post function */
@@ -79,7 +89,6 @@ a {
     z-index: 3;
     top: 30%;
 }
-
 
 #postTitle {
     margin: 0;
@@ -123,6 +132,11 @@ a {
 
 .template {
     background: white;
+}
+
+#closure{
+    padding: 50px 0px 5px 0px;
+    font-size: 10px;
 }
 
 /* Login Page & Register page*/
@@ -169,8 +183,18 @@ footer {
     background: #333333;
     color: white;
      text-align: center;
-    position: fixed; 
+     
     padding: 40px;
     bottom: 0;
     left: 0;
+}
+
+/* Media queries */
+@media (max-width:420px){
+    nav{
+        width:100%;
+    }
+    .blogPost {
+        width: 75%;
+    }
 }
