@@ -5,9 +5,15 @@
     overflow-x: hidden;
     /* Max width makes the page fit onto the full viewing screen and overflow-x makes sure to clip any excess that goes beyond the confines of the 100% screen page. */
 }
- h1{
-     padding: 10px 0px 30px 0px;
- }
+
+html {
+    height: 100%;
+}
+
+h1 {
+    padding: 10px 0px 30px 0px;
+}
+
 .container {
     margin: 0 auto;
 }
@@ -15,6 +21,7 @@
 body {
     background: #F5F5F5;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
 }
 
 .btn {
@@ -44,7 +51,7 @@ nav {
     flex-direction: row;
 }
 
-.navMenu{
+.navMenu {
     display: inline;
 }
 
@@ -64,20 +71,27 @@ a {
 }
 
 /* Home page */
-.contentContainer {
-    margin: 75px 35rem;
+.blogContainer, .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .blogPost {
-    width: 70%; 
+    display: inline-block;
+    width: 30%;
     /* This is necessary to determine the size of the boxs for the blog messages to appear. */
     padding: 10px 4em 3em 4em;
     border: 1px solid silver;
     border-radius: 15px;
     box-shadow: 3px 5px 10px black;
-    margin: 10px; 
+    margin: 1.5%;
     /* The margin is added because without this, the overflow will clip the shadows.*/
 }
+
+/* To center the blog posts in the center of the page, I had to set the html, body, and parent container of the blog post to 100% height. */
+/* In addition, in the parent container, the display needed to be set to flex, align-items and justify content needed to be center as well.*/
 
 /* Post function */
 
@@ -134,7 +148,7 @@ a {
     background: white;
 }
 
-#closure{
+#closure {
     padding: 50px 0px 5px 0px;
     font-size: 10px;
 }
@@ -172,9 +186,9 @@ a {
     padding: 10px;
 }
 
-#login{
-left: 0;
-color: black;
+#login {
+    left: 0;
+    color: black;
 }
 
 /* Footer */
@@ -182,18 +196,19 @@ footer {
     width: 100%;
     background: #333333;
     color: white;
-     text-align: center;
-     
+    text-align: center;
+
     padding: 40px;
     bottom: 0;
     left: 0;
 }
 
 /* Media queries */
-@media (max-width:420px){
-    nav{
-        width:100%;
+@media (max-width:420px) {
+    nav {
+        width: 100%;
     }
+
     .blogPost {
         width: 75%;
     }
