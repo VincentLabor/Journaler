@@ -26,6 +26,15 @@
     </div>
 </div>
 <% }) %>
+<%posts.forEach(function(post){ %>
+    <div class="blogContainer">
+        <div class="blogPost">
+            <h1 id="title"><%= post.title %></h1>
+            <p><%=post.content %></p>
+            <p id="closure">Written by <%= post.firstName%></p>
+        </div>
+    </div>
+    <% }) %>
 
 
 

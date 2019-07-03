@@ -24,6 +24,11 @@ body {
     height: 100%;
 }
 
+.wrapper{
+    min-height: 100%;
+/* This sets the footer to the bottom of the page for every page. */
+}
+
 .btn {
     padding: 10px 14px;
     background-color: #333333;
@@ -173,7 +178,7 @@ a {
     width: 20%;
     background: white;
     border-radius: .75rem;
-    padding: 2rem 0rem 2rem 2rem;
+    padding: 2rem 0rem 2rem 0rem;
     box-shadow: 3px 5px 10px black;
     margin-bottom: 15px;
 }
@@ -196,10 +201,10 @@ a {
 
 .forms {
     border-radius: 7px;
-    margin: 10px 5px 20px 0px;
+    margin: 10px 25px 20px 0px;
     width: 90%;
     border: 1px solid silver;
-    padding: 10px 10px 10px 0px;
+    padding: 10px;
 }
 
 #login {
@@ -216,7 +221,8 @@ footer {
     margin-top: 1.5%;
     padding: 40px;
     bottom: 0;
-    left: 0;
+    position: relative;
+    
 }
 
 /* Media queries */
