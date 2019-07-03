@@ -14,7 +14,7 @@ h1 {
     padding: 10px 0px 30px 0px;
 }
 
-.container {
+.container1 {
     margin: 0 auto;
 }
 
@@ -38,12 +38,22 @@ nav {
     background: #333;
     padding: 35px;
     color: white;
+    margin-bottom: 1.5%;
+}
+
+.link{
+    text-align: center;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.link:hover{
+    color: green;
 }
 
 .navLinks {
-    justify-content: space-evenly;
-    margin-left: auto;
-
+margin-left: auto;
+/* Consumes all space to the left, setting the Navlinks on the right */
 }
 
 .navContainer {
@@ -51,18 +61,20 @@ nav {
     flex-direction: row;
 }
 
-.navMenu {
-    display: inline;
+.navMenu{
+    padding: 10px;
+    /* this removes the vertical scrollbar that is made from the overflow-x */
 }
 
 ul {
     list-style-type: none;
+    /* This removes the bullets for the navigation */
 }
 
 li {
     display: inline;
-    margin: 10px;
-    padding: 5px 10px;
+    padding: 5px 20px;
+    /* This increases the distance between the links on the navbar */
 }
 
 a {
@@ -76,13 +88,15 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 .blogPost {
     display: inline-block;
     width: 30%;
     /* This is necessary to determine the size of the boxs for the blog messages to appear. */
-    padding: 10px 4em 3em 4em;
+    padding: 10px 2em 3em 2em;
     border: 1px solid silver;
     border-radius: 15px;
     box-shadow: 3px 5px 10px black;
@@ -92,6 +106,7 @@ a {
 
 /* To center the blog posts in the center of the page, I had to set the html, body, and parent container of the blog post to 100% height. */
 /* In addition, in the parent container, the display needed to be set to flex, align-items and justify content needed to be center as well.*/
+
 
 /* Post function */
 
@@ -155,11 +170,12 @@ a {
 
 /* Login Page & Register page*/
 .mt5 {
-    margin: 3rem 390px 3rem 390px;
+    width: 20%;
     background: white;
     border-radius: .75rem;
-    padding: 2rem;
+    padding: 2rem 0rem 2rem 2rem;
     box-shadow: 3px 5px 10px black;
+    margin-bottom: 15px;
 }
 
 .credbox {
@@ -180,10 +196,10 @@ a {
 
 .forms {
     border-radius: 7px;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 5px 20px 0px;
     width: 90%;
     border: 1px solid silver;
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
 }
 
 #login {
@@ -197,7 +213,7 @@ footer {
     background: #333333;
     color: white;
     text-align: center;
-
+    margin-top: 1.5%;
     padding: 40px;
     bottom: 0;
     left: 0;
@@ -205,11 +221,34 @@ footer {
 
 /* Media queries */
 @media (max-width:420px) {
+    .grid   
     nav {
         width: 100%;
     }
 
-    .blogPost {
-        width: 75%;
+    .blogPost{
+        width: 80%;
+    }
+}
+
+@media (max-width:800px) {
+    .grid   
+    nav {
+        width: 100%;
+    }
+
+    .blogPost{
+        width: 80%;
+    }
+}
+
+@media (max-width:1600px) {
+    .grid   
+    nav {
+        width: 100%;
+    }
+
+    .blogPost{
+        width: 50%;
     }
 }
