@@ -14,7 +14,7 @@ h1 {
     padding: 10px 0px 30px 0px;
 }
 
-.container1 {
+.container {
     margin: 0 auto;
 }
 
@@ -29,13 +29,25 @@ body {
     /* This sets the footer to the bottom of the page for every page. */
 }
 
-.btn {
-    padding: 10px 14px;
-    background-color: #333333;
-    border: 3px solid #F5F5F5;
-    border-radius: 10px;
+button{
+    background: green;
+    box-shadow: 0px 4px 5px #333;
+    color: 0.3s ease;
+    margin: 5px;
+    border: solid 0px;
+    border-radius: 5px;
+    outline: none;
     color: white;
+    padding: 10px 14px;
 }
+
+button:hover {
+    color: white;
+    background: #23D93A;
+    cursor: pointer;
+    transition: 0.5;
+}
+
 
 /* Navigation bar */
 nav {
@@ -156,19 +168,13 @@ textarea {
 }
 
 #postBtn {
-    background: white;
-    border: solid 0px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    outline: none;
-
+    padding: 10px 60px;
 }
 
-#postBtn:hover {
-    color: white;
-    background: #333;
-    cursor: pointer;
-    transition: 0.5;
+
+button:active{
+    background: green;
+    box-shadow: 0px 0px 0px transparent;
 }
 
 .template {
