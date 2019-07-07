@@ -2,12 +2,13 @@
 
 <%posts.slice().reverse().forEach(function(post){ %>
 <!-- Here, we treat the posts as an array and we slice it, which we return just a shallow copy. then we reverse it and apply is to every single post. -->
+<!-- forEach only goes forward. So we use precursors such as making a copy of the array and reversing it.  -->
 
 <div class="blogContainer">
     <div class="blogPost">
         <h1 id="title"><%= post.title %></h1>
         <p><%=post.content %></p>
-        <p id="closure">Written by <%= post.firstName%></p>
+        <p id="closure">Written by <%= post.firstName%></p> <p id="createdAt"><%= post.createdAt %></p>
     </div>
 </div>
 <% }) %>

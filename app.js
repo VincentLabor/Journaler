@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const session = require('express-session');
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose')
+const timestampPlugin = require('./timestamp'); //This is a module I made to allow the database to save the current date. 
 
 const app = express();
 
@@ -61,8 +62,12 @@ var postSchema = new mongoose.Schema({
   content: String,
   user: String,
   firstName: String,
-  date: Date
+  createdAt: {
+    type: Date
+  }
 });
+
+postSchema.plugin(timestampPlugin); //This plugin allows the database to get the date at the time of creating a post. This should be implemented after declaring the associated schema.
 
 let Post = mongoose.model('Post', postSchema);
 
@@ -106,8 +111,8 @@ app.route("/register")
 
   .post((req, res) => {
     User.register({
-      firstName:req.body.firstName,
-      lastName:req.body.lastName,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       username: req.body.username,
       active: false
     }, req.body.password, function (err, user) {
@@ -131,8 +136,8 @@ app.route('/posts')
     const content = req.body.content;
     const user = req.user;
     let today = new Date();
-    let todaysDate = (today.getMonth()+1)
-    
+    let todaysDate = (today.getMonth() + 1)
+
     console.log(user);
     const blogPost = new Post({
       title: title,

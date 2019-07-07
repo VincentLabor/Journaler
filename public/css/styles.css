@@ -125,6 +125,15 @@ a {
 /* In addition, in the parent container, the display needed to be set to flex, align-items and justify content needed to be center as well.*/
 
 
+#closure {
+    padding: 35px 0px 5px 0px;
+    font-size: 10px;
+}
+
+#createdAt{
+    display: inline;
+}
+
 /* Post function */
 
 #postFunction {
@@ -180,10 +189,6 @@ button:active {
     background: white;
 }
 
-#closure {
-    padding: 35px 0px 5px 0px;
-    font-size: 10px;
-}
 
 /* Login Page & Register page*/
 .mt5 {
