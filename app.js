@@ -80,12 +80,6 @@ app.get("/", function (req, res) {
   })
 });
 
-var kill = new Post({
-  title: "Hello",
-  content: "Words"
-});
-
-
 app.route("/login")
   .get((req, res) => res.render("login"))
 

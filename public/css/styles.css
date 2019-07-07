@@ -29,11 +29,11 @@ body {
     /* This sets the footer to the bottom of the page for every page. */
 }
 
-button{
+button {
     background: green;
     box-shadow: 0px 4px 5px #333;
     color: 0.3s ease;
-    margin: 5px;
+    margin: 10px 0px;
     border: solid 0px;
     border-radius: 5px;
     outline: none;
@@ -75,7 +75,6 @@ nav {
 
 .navContainer {
     display: flex;
-    flex-direction: row;
 }
 
 .navMenu {
@@ -129,7 +128,7 @@ a {
 /* Post function */
 
 #postFunction {
-    margin: 35px 34.5%;
+    width: 34%;
     background: white;
     border-radius: 20px;
     padding: 10px;
@@ -172,7 +171,7 @@ textarea {
 }
 
 
-button:active{
+button:active {
     background: green;
     box-shadow: 0px 0px 0px transparent;
 }
@@ -196,8 +195,11 @@ button:active{
     margin-bottom: 15px;
 }
 
-.credbox {
+.credBox {
     box-sizing: box-border;
+    /* This keeps the box inside of the parent container completely. */
+    width: 90%;
+
 }
 
 #loginText {
@@ -218,11 +220,21 @@ button:active{
     width: 90%;
     border: 1px solid silver;
     padding: 10px;
+
 }
 
 #login {
-    left: 0;
+    justify-content: space-evenly;
+    color: green;
+    text-decoration: underline;
+}
+
+#login:hover {
     color: black;
+}
+
+#loginBtn {
+    justify-items: flex-end;
 }
 
 /* Footer */
@@ -244,8 +256,30 @@ footer {
         width: 100%;
     }
 
+    .navContainer {
+        width: 100%;
+    }
+
+    li {
+        padding: 5px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
     .blogPost {
         width: 80%;
+    }
+
+    #postFunction {
+        width: 80%;
+
+        /* This determines the size of the post when the viewport is smaller */
+    }
+
+    .mt5{
+        width: 60%;
     }
 }
 
@@ -254,9 +288,30 @@ footer {
         width: 100%;
     }
 
+    .navContainer {
+        width: 100%;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    li {
+        padding: 5px;
+    }
+
     .blogPost {
         width: 80%;
     }
+
+    #postFunction {
+        width: 60%;
+    }
+
+    .mt5 {
+        width: 60%;
+    }
+
 }
 
 @media (max-width:1600px) {
@@ -264,7 +319,27 @@ footer {
         width: 100%;
     }
 
+    nav {
+        padding: 10px;
+    }
+
+    .navContainer {
+        width: 100%;
+    }
+
+    li {
+        padding: 5px;
+    }
+
     .blogPost {
         width: 50%;
+    }
+
+    #postFunction {
+        width: 60%;
+    }
+
+    .mt5 {
+        width: 60%;
     }
 }

@@ -1,6 +1,8 @@
 <%-  include('partials/header') %>
 
-<%posts.forEach(function(post){ %>
+<%posts.slice().reverse().forEach(function(post){ %>
+<!-- Here, we treat the posts as an array and we slice it, which we return just a shallow copy. then we reverse it and apply is to every single post. -->
+
 <div class="blogContainer">
     <div class="blogPost">
         <h1 id="title"><%= post.title %></h1>
