@@ -8,6 +8,7 @@ const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose')
 const timestampPlugin = require('./timestamp'); //This is a module I made to allow the database to save the current date. 
 
+
 const app = express();
 
 //This allows access to the css files.
@@ -29,6 +30,8 @@ app.use(session({
 app.use(passport.initialize());
 //Because we will be using persistent logins, passport.session is called. This must be the order to call initialize and session. 
 app.use(passport.session());
+
+
 
 mongoose.connect('mongodb://localhost/blogDB', {
   useNewUrlParser: true
@@ -126,12 +129,21 @@ app.route("/register")
     })
   });
 
+  app.use(function loggedIn(req,res,next){
+    console.log(req.user);
+    if(req.user){
+        next();
+    } else {
+        res.redirect('/login');
+    }
+})
+
 app.route('/posts')
   .get((req, res) => {
     res.render('posts')
   })
 
-  .post((req, res) => {
+  .post((req, res, next) => {
     const title = req.body.title;
     const content = req.body.content;
     const user = req.user;

@@ -57,6 +57,7 @@ nav {
     text-align: center;
     padding: 5px;
     transition: color 0.3s ease;
+    color: white;
 }
 
 .link:hover {
@@ -90,7 +91,11 @@ li {
 
 a {
     text-decoration: none;
-    color: white;
+    
+}
+
+#logo{
+    font-family: 'Libre Baskerville', serif;
 }
 
 /* Home page */
@@ -127,6 +132,10 @@ a {
 
 #createdAt {
     display: inline;
+}
+
+#selectPost{
+    color: black;
 }
 
 /* Post function */
