@@ -66,7 +66,7 @@ var postSchema = new mongoose.Schema({
   user: String,
   firstName: String,
   createdAt: {
-    type: Date
+    type: String,
   }
 });
 
@@ -128,15 +128,19 @@ app.route("/register")
       }
     })
   });
-
+  
+ //Next is middleware that checks whether or not if the user is logged in. If not, they are redirected to the login page.
+ 
   app.use(function loggedIn(req,res,next){
-    console.log(req.user);
-    if(req.user){
+    if(req.user){ //If the user is logged in, move onto the next.
         next();
     } else {
         res.redirect('/login');
     }
 })
+
+var date = new Date();
+
 
 app.route('/posts')
   .get((req, res) => {
@@ -147,16 +151,20 @@ app.route('/posts')
     const title = req.body.title;
     const content = req.body.content;
     const user = req.user;
-    let today = new Date();
-    let todaysDate = (today.getMonth() + 1)
-
+    //Mongoose saves date in an awkward unchangeable format so instead of saving the schema as Date, I saved it as String.
+    //So since the format is string, all I have to do is get the date in Javascript and save to the database and now I can control the format while getting the date. 
+    let date = new Date();
+    let month = date.getMonth();
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let todaysDate = (month+1) + "/" + day + "/" + year
     console.log(user);
     const blogPost = new Post({
       title: title,
       content: content,
       user: user.username,
       firstName: user.firstName,
-      date: todaysDate
+      createdAt: todaysDate
     })
 
     blogPost.save();
