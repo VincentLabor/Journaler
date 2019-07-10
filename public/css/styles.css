@@ -160,6 +160,10 @@ a {
     padding-top: 10px;
 }
 
+#postLink{
+    color: black;
+}
+
 .textarea {
     display: block;
     padding: 5px;

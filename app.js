@@ -63,7 +63,11 @@ var User = mongoose.model("User", userSchema);
 var postSchema = new mongoose.Schema({
   title: String,
   content: String,
-  user: String,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  },
   firstName: String,
   createdAt: {
     type: String,
@@ -162,7 +166,7 @@ app.route('/posts')
     const blogPost = new Post({
       title: title,
       content: content,
-      user: user.username,
+      user: user._id,
       firstName: user.firstName,
       createdAt: todaysDate
     })
