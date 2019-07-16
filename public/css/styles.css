@@ -49,7 +49,6 @@ button:hover {
 nav {
     background: #57a30b;
     padding: 35px 0px 35px 35px;
-    color: white;
     margin-bottom: 1.5%;
 }
 
@@ -96,6 +95,7 @@ a {
 
 #logo{
     font-family: 'Libre Baskerville', serif;
+    
 }
 
 /* Home page */
@@ -116,7 +116,7 @@ a {
     padding: 10px 2em 1em 2em;
     border: 1px solid silver;
     border-radius: 15px;
-    box-shadow: 3px 5px 10px black;
+    box-shadow: 0px 4px 6px gray;
     margin: 1.5%;
     /* The margin is added because without this, the overflow will clip the shadows.*/
 }
@@ -143,17 +143,19 @@ a {
 #content{
     padding: 15px 0px 0px 0px;
     line-height: 1.5;
+    
 }
 
 /* Post function */
 
 #postFunction {
     width: 34%;
-    background: white;
     border-radius: 20px;
     padding: 10px;
     z-index: 3;
     top: 30%;
+    border: 1px solid silver;
+    box-shadow: 0px 4px 6px gray;
 }
 
 #title{
@@ -167,27 +169,23 @@ a {
 .textarea {
     display: block;
     padding: 5px;
-    border: 0px solid;
-    background: transparent;
+    border: 1px solid silver;
     color: black;
+    border-radius: 15px;
+    width: 90%;
+    resize: none;
 }
 
-textarea {
-    white-space: pre-wrap;
-    overflow: auto;
-    /* Overflow: auto removes the automatic scrollbars left there in internet explorer. */
-}
 
 #titleArea {
     font-size: 45px;
-    outline: none;
 }
 
 #textContent {
-    width: 535px;
+    width: 90%;
     height: 250px;
     font-size: 18px;
-    outline: none;
+    
 }
 
 #postBtn {
@@ -211,7 +209,7 @@ button:active {
     background: white;
     border-radius: .75rem;
     padding: 2rem 0rem 2rem 0rem;
-    box-shadow: 3px 5px 10px black;
+    box-shadow: 0px 4px 6px gray;
     margin-bottom: 15px;
 }
 
@@ -296,7 +294,6 @@ footer {
 
     #postFunction {
         width: 80%;
-
         /* This determines the size of the post when the viewport is smaller */
     }
 
