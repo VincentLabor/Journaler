@@ -17,6 +17,7 @@ body {
     background: white;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
+    
 }
 
 .wrapper {
@@ -57,15 +58,19 @@ nav {
     padding: 5px;
     transition: color 0.3s ease;
     color: white;
+    opacity: .7;
+    animation-name: slowChange;
+    animation-duration: 2s;
+
+}
+
+@keyframes slowChange{
+    from{color: transparent;}
+    to{color: white;}
 }
 
 .link:hover {
-    color: green;
-}
-
-.navLinks {
-    margin-left: auto;
-    /* Consumes all space to the left, setting the Navlinks on the right */
+    opacity:1;
 }
 
 .navContainer {
@@ -96,6 +101,10 @@ a {
 #logo{
     font-family: 'Libre Baskerville', serif;
     
+}
+
+.nav .current{
+    border-bottom: 1px green solid;
 }
 
 /* Home page */
@@ -151,7 +160,7 @@ a {
 #postFunction {
     width: 34%;
     border-radius: 20px;
-    padding: 10px;
+    padding: 2rem;
     z-index: 3;
     top: 30%;
     border: 1px solid silver;
@@ -168,7 +177,7 @@ a {
 
 .textarea {
     display: block;
-    padding: 5px;
+    padding: 10px; /* This targets the space inside of the textbars in Post */
     border: 1px solid silver;
     color: black;
     border-radius: 15px;
@@ -184,8 +193,7 @@ a {
 #textContent {
     width: 90%;
     height: 250px;
-    font-size: 18px;
-    
+    font-size: 15px;
 }
 
 #postBtn {
@@ -238,7 +246,7 @@ button:active {
     width: 90%;
     border: 1px solid silver;
     padding: 10px;
-
+    box-shadow: 0px 2px 3px;
 }
 
 #login {

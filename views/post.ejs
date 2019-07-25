@@ -1,0 +1,22 @@
+<%-  include('partials/header') %>
+
+<div class="Container">
+    <form action="/post" method="post">
+        <div id="postFunction" class="hiddenElement">
+                <div class="textinput">
+                    <input type="text" name="title" id="titleArea" class="textarea" placeholder="Title of your post" autocomplete="off">
+                </div>
+                <br>
+                <div class="">
+                    <textarea name="content" id="textContent" class="textarea" placeholder="Type in your thoughts"
+                        rows="5"></textarea>
+                    <!-- <input type="text" name="textContent" id="textContent" class="textarea"> -->
+                </div>
+            <div class="container">
+                <button id="postBtn" type="submit">Post</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include('partials/footer') %>

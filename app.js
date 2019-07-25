@@ -92,6 +92,21 @@ app.get("/", function (req, res) {
   })
 });
 
+app.get("/posts/:postId", (req,res) => { //Basically this will begin to take in inputs and the inputs can be found in req.params. You must create the route parameter 
+  //Then you can set the parameter to a variable and query the variable when looking for something
+  const requestedPostID = req.params.postId;
+  Post.findOne({_id: requestedPostID}, (err,post)=>{ //This will look for things that match the _id with requestedPostID
+    if(err){
+      console.log(err)
+    } else {
+      res.render("posts",{
+      title: post.title,
+      content: post.content
+    })}
+
+  });
+});
+
 app.route("/login")
   .get((req, res) => res.render("login"))
 
@@ -143,12 +158,9 @@ app.route("/register")
     }
 })
 
-var date = new Date();
-
-
-app.route('/posts')
+app.route('/post')
   .get((req, res) => {
-    res.render('posts')
+    res.render('post')
   })
 
   .post((req, res, next) => {
@@ -162,7 +174,6 @@ app.route('/posts')
     let day = date.getDate();
     let year = date.getFullYear();
     let todaysDate = (month+1) + "/" + day + "/" + year
-    console.log(user);
     const blogPost = new Post({
       title: title,
       content: content,

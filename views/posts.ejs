@@ -1,24 +1,15 @@
 <%-  include('partials/header') %>
 
-<div class="Container">
-    <form action="/posts" method="post">
-        <div id="postFunction" class="hiddenElement">
-            <div class="textinput">
-                <div class="textinput">
-                    <input type="text" name="title" id="titleArea" class="textarea" placeholder="Title" autocomplete="off">
-                </div>
-                <br>
-                <div class="">
-                    <textarea name="content" id="textContent" class="textarea" placeholder="Type in your thoughts"
-                        rows="5"></textarea>
-                    <!-- <input type="text" name="textContent" id="textContent" class="textarea"> -->
-                </div>
-            </div>
-            <div class="container">
-                <button id="postBtn" type="submit">Post</button>
-            </div>
-        </div>
-    </form>
-</div>
+
+<!-- Here, we treat the posts as an array and we slice it, which we return just a shallow copy. then we reverse it and apply is to every single post. -->
+<!-- forEach only goes forward. So we use precursors such as making a copy of the array and reversing it.  -->
+
+
+
+          <h1><%=title%> </h1>
+          <p><%=content%></p>
+
+   
+
 
 <%- include('partials/footer') %>
