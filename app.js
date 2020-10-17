@@ -99,61 +99,22 @@ app.get("/posts/:postId", (req, res) => {
   });
 });
 
-app
-  .route("/login")
-  .get((req, res) => res.render("login"))
 
-  .post((req, res) => {
-    const user = new User({
-      username: req.body.username,
-      password: req.body.password,
-    });
-
-    req.login(user, function (err) {
-      if (err) {
-        console.log(err);
-        res.redirect("/");
-      } else {
-        passport.authenticate("local")(req, res, function () {
-          res.redirect("/");
-        });
-      }
-    });
-  });
 
 app.use("/api/register", require("./routes/register"));
-// app.use("/api/auth", require("./routes/auth"));
+ app.use("/api/auth", require("./routes/auth"));
 
-// app.route("/register")
-//   .get((req, res) => res.render("register"))
+//Next is middleware that checks whether or not if the user is logged in.
+// If not, they are redirected to the login page.
 
-//   .post((req, res) => {
-//     User.register({
-//       firstName: req.body.firstName,
-//       lastName: req.body.lastName,
-//       username: req.body.username,
-//       active: false
-//     }, req.body.password, function (err, user) {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         passport.authenticate('local')(req, res, function () {
-//           res.redirect("/");
-//         })
-//       }
-//     })
-//   });
-
-//  //Next is middleware that checks whether or not if the user is logged in. If not, they are redirected to the login page.
-
-app.use(function loggedIn(req, res, next) {
-  if (req.user) {
-    //If the user is logged in, move onto the next.
-    next();
-  } else {
-    res.redirect("/login");
-  }
-});
+// app.use(function loggedIn(req, res, next) {
+//   if (req.user) {
+//     //If the user is logged in, move onto the next.
+//     next();
+//   } else {
+//     res.redirect("/login");
+//   }
+// });
 
 app
   .route("/post")
