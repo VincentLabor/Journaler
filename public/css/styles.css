@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    background: white;
+    background: #ebe6e3;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
     
@@ -28,7 +28,6 @@ body {
 
 button {
     background: green;
-    box-shadow: 0px 4px 5px #333;
     color: 0.3s ease;
     margin: 10px 0px;
     border: solid 0px;
@@ -56,21 +55,15 @@ nav {
 .link {
     text-align: center;
     padding: 5px;
-    transition: color 0.3s ease;
     color: white;
-    opacity: .7;
-    animation-name: slowChange;
-    animation-duration: 2s;
-
 }
 
-@keyframes slowChange{
-    from{color: transparent;}
-    to{color: white;}
+.readmore:hover{
+    color: #7a92f0
 }
 
 .link:hover {
-    opacity:1;
+    color: silver;
 }
 
 .navContainer {
@@ -125,7 +118,7 @@ a {
     padding: 10px 2em 1em 2em;
     border: 1px solid silver;
     border-radius: 15px;
-    box-shadow: 0px 4px 6px gray;
+    background: white;
     margin: 1.5%;
     /* The margin is added because without this, the overflow will clip the shadows.*/
 }
@@ -164,7 +157,6 @@ a {
     z-index: 3;
     top: 30%;
     border: 1px solid silver;
-    box-shadow: 0px 4px 6px gray;
 }
 
 #title{
@@ -203,7 +195,6 @@ a {
 
 button:active {
     background: green;
-    box-shadow: 0px 0px 0px transparent;
 }
 
 .template {
@@ -217,7 +208,7 @@ button:active {
     background: white;
     border-radius: .75rem;
     padding: 2rem 0rem 2rem 0rem;
-    box-shadow: 0px 4px 6px gray;
+    border: solid 1px silver;
     margin-bottom: 15px;
 }
 
@@ -246,7 +237,7 @@ button:active {
     width: 90%;
     border: 1px solid silver;
     padding: 10px;
-    box-shadow: 0px 2px 3px;
+    
 }
 
 #login {
