@@ -1,5 +1,6 @@
 <%-  include('partials/header') %>
 
+<!-- This is rendered from app.js -->
 <%posts.slice().reverse().forEach(function(post){ %>
 <!-- Here, we treat the posts as an array and we slice it, which we return just a shallow copy. then we reverse it and apply is to every single post. -->
 <!-- forEach only goes forward. So we use precursors such as making a copy of the array and reversing it.  -->
