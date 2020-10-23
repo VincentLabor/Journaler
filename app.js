@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const session = require("express-session");
-const passport = require("passport");
+const passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy;
 const user = require("./models/User");
 const Post = require("./models/Post");
 
@@ -52,6 +53,10 @@ passport.deserializeUser(user.deserializeUser());
 app.use("/api/register", require("./routes/register"));
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/userPost", require("./routes/userPost"));
+app.use((req,res,next)=>{
+  res.locals.currentUser = req.user;
+  next();
+})
 
 app.get("/", async (req, res) => {
   await Post.find({}, (err, posts) => {
@@ -59,6 +64,7 @@ app.get("/", async (req, res) => {
       //I have no idea what the posts is here.
       //Guessing all of the posts of the Post model.
       posts,
+      currentUser: req.user,
     });
   });
 });

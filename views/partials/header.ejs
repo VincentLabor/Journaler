@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="shortcut icon" type = "image/jpg" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.ico">
 
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Poppins&display=swap" rel="stylesheet">
     <script src="app.js"></script>
@@ -21,17 +21,29 @@
 
 <body>
     <div class="wrapper">
-    <nav>
-        <div class="navContainer">
-                <a class="link" id="logo"  href="/"><h2>Journaler</h2></a>
-            <div class="navLinks">
-                <ul class="navMenu">
-                    <li class="navigation"><a class="link opac" href="/"><i class="fas fa-home"></i> Home</a></li>
-                    <!-- <li class="navigation"><a class="link opac" href="/login">Explore</a></li> -->
-                    <li class="navigation"><a class="link opac" href="/api/userPost" id='post'> <i class="fas fa-pen-fancy"></i> Post</a></li>
-                    <li class="navigation"><a class="link opac login" href="/api/auth">Login</a></li>
-                    <li class="navigation"><a class="link opac" href="/api/register">Register</a></li>
-                </ul>
+        <nav>
+            <div class="navContainer">
+                <a class="link" id="logo" href="/">
+                    <h2>Journaler</h2>
+                </a>
+                <div class="navLinks">
+                    <ul class="navMenu">
+                        <li class="navigation"><a class="link opac" href="/"><i class="fas fa-home"></i> Home</a></li>
+                        <!-- <li class="navigation"><a class="link opac" href="/login">Explore</a></li> -->
+                        <li class="navigation"><a class="link opac" href="/api/userPost" id='post'> <i
+                                    class="fas fa-pen-fancy"></i> Post</a></li>
+                        <% if(!locals.currentUser){ %>
+                            <li class="navigation"><a class="link opac login" href="/api/auth">Login</a></li>
+                            <li class="navigation"><a class="link opac" href="/api/register">Register</a></li>
+                        <% }                %>
+
+                          
+
+
+                        
+
+
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
