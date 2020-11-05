@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const passportLocalMongoose = require("passport-local-mongoose");
-const timestampPlugin = require("../timestamp"); //This is a module I made to allow the database to save the current date.
+const timestampPlugin = require("../src/Components/timestamp"); //This is a module I made to allow the database to save the current date.
 
 var postSchema = new mongoose.Schema({
     title: String,

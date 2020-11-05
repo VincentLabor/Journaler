@@ -6,20 +6,23 @@
 <!-- Here, we treat the posts as an array and we slice it, which we return just a shallow copy. then we reverse it and apply is to every single post. -->
 <!-- forEach only goes forward. So we use precursors such as making a copy of the array and reversing it.  -->
 
-                  
+
 <div class="blogContainer">
-        <div class="blogPost">
-              <a href="" id="postLink">  <h1 id="title"><%= post.title %></h1></a>
-                <p id="content"><%=post.content %></p>
-                <p id="closure">Written by <%= post.firstName%></p>
-                <p id="createdAt"><%= post.createdAt %></p>
-                <a href="/posts/<%=post._id%>" class="readmore">Read more</a>
-                <!-- <% var date = new Date(); %>
+  <div class="blogPost">
+    <p id="createdAt"><%= post.createdAt %></p>
+    <a href="" id="postLink">
+      <h1 id="title"><%= post.title %></h1>
+    </a>
+    <p id="content"><%=post.content %></p>
+    <p id="closure">Written by <%= post.firstName%></p>
+
+    <!-- <a href="/posts/<%=post._id%>" class="readmore">Read more</a> -->
+    <!-- <% var date = new Date(); %>
                 <p id="createdAt"><%= date.toDateString(); %></p> -->
-                
-        </div>
-    </div>
-    <% }) %>
+
+  </div>
+</div>
+<% }) %>
 
 
 <%- include('partials/footer') %>

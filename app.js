@@ -4,15 +4,18 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const session = require("express-session");
-const passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+const passport = require("passport"),
+  LocalStrategy = require("passport-local").Strategy;
 const user = require("./models/User");
 const Post = require("./models/Post");
+const mobileMenu = require("./src/Components/mobileMenu");
+const path = require("path");
 
 const app = express();
 
 //This allows access to the css files.
 app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "src")));
 //This allows access to the form in the ejs files, allowing us to pull data from what users type.
 app.use(
   bodyParser.urlencoded({
@@ -53,10 +56,13 @@ passport.deserializeUser(user.deserializeUser());
 app.use("/api/register", require("./routes/register"));
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/userPost", require("./routes/userPost"));
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   next();
-})
+});
+// app.use('api/mobileMenu', require("./routes/mobileMenu"))
+
+// mobileMenu();
 
 app.get("/", async (req, res) => {
   await Post.find({}, (err, posts) => {

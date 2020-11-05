@@ -14,9 +14,10 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" type="image/jpg" href="/favicon.ico">
 
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Poppins&display=swap" rel="stylesheet">
-    <script src="app.js"></script>
-    <script src="https://kit.fontawesome.com/ffed62ded0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -28,29 +29,63 @@
                 </a>
                 <div class="navLinks">
                     <ul class="navMenu">
-                        <li class="navigation"><a class="link opac" href="/"><i class="fas fa-home"></i> Home</a></li>
-                        <!-- <li class="navigation"><a class="link opac" href="/login">Explore</a></li> -->
-                        <li class="navigation"><a class="link opac" href="/api/userPost" id='post'> <i
-                                    class="fas fa-pen-fancy"></i> Post</a></li>
+
+
+                        <!-- If the User has not logged in yet, this will appear -->
                         <% if(!locals.currentUser){ %>
-                        <li class="navigation"><a class="link opac login" href="/api/auth">Login</a></li>
-                        <li class="navigation"><a class="link opac" href="/api/register">Register</a></li>
-                        <% }                %>
-                        <% if(locals.currentUser){ %>
-                        <li class="navigation">
-                            <a class="link opac" href="/api/register">
-                                Greetings,
-                                <%= locals.currentUser.firstName %>
-                            </a>
+                            
+                            <li class="navigation hideOnSmallMedia navHeaders"><a class="link opac" href="/"><i
+                                class="fas fa-home"></i> Home</a></li>
+                        <li class="navigation hideOnSmallMedia navHeaders"><a class="link opac login" href="/api/auth">Login</a>
                         </li>
+                        <li class="navigation hideOnSmallMedia navHeaders"><a class="link opac" href="/api/register">Register</a>
+                        </li>
+                        <% }                %>
+                        <!-- If the user is logged in, this will be the items on the nav -->
+                        <% if(locals.currentUser){ %>
+                            <li class="navigation hideOnSmallMedia bolden link navHeaders">
+
+                                Hi,
+                                <%= locals.currentUser.firstName %>
+
+                        </li>
+                            <li class="navigation hideOnSmallMedia navHeaders"><a class="link opac" href="/"><i
+                                class="fas fa-home"></i> Home</a></li>
+                        <li class="navigation hideOnSmallMedia navHeaders"><a class="link opac" href="/api/userPost" id='post'> <i
+                                    class="fas fa-pen-fancy"></i> Post</a></li>
+                        <!-- This will be shown on large media -->
+                        <li class="navigation hideOnLargeMedia link bolden">
+                            Hi,
+                            <%= locals.currentUser.firstName %>
+                        </li>
+                        <li class="navigation hideOnLargeMedia"><a class="link opac" href="/api/userPost" id='post'> <i
+                                    class="fas fa-pen-fancy"></i> Post</a></li>
+
                         <%         }               %>
+                        <!-- This below is for the mobile portion of the header -->
+                        <!-- <div class="hideOnLargeMedia remBtn hamburgerMenu" data-test="<%"=test "%>">
+                            <li class="hideOnLargeMedia ">
+                                    <i class="fas fa-bars fa-2x"></i></li>
+                        </div> -->
 
-
-
+                        <div id="mobileNav"></div>
 
 
 
                     </ul>
                 </div>
             </div>
+            <script src="ejs.js"></script>
+            <script>
+                const hamburgerMenus = document.getElementById("hamburgerMenu").dataset.test;
+                console.log(hamburgerMenus)
+                const mobileNav = document.getElementById("mobileNav");
+
+                hamburgerMenus.addEventListener("click", toggleHamMenu);
+
+                const toggleHamMenu = () => {
+                    console.log('yolo')
+
+                }
+            </script>
         </nav>
