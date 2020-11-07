@@ -3,27 +3,31 @@
 <div class="container mt5">
     <div class="credBox">
         <form action="/api/register" method="POST">
-            <h1>Register</h1>
-            <div class="form-group">
-                    <label for="email" id="loginText">First Name</label>
-                    <input type="text" name="firstName" id="" class="forms">
-                </div>
-                <div class="form-group">
-                        <label for="email" id="loginText">Last Name</label>
-                        <input type="text" name="lastName" id="" class="forms">
-                    </div>
-            <div class="form-group">
-                <label for="email" id="loginText">Username</label>
-                <input type="email" name="username" id="" class="forms">
+            <div class="flexCredentials">
+                <h1>Register</h1>
+
+                <label for="email" class="credentialLabel">First Name</label>
+                <input type="text" name="firstName" class="forms inputWidth inputSpacing" placeholder="First Name">
+
+                <label for="email" class="credentialLabel">Last Name</label>
+                <input type="text" name="lastName" class="forms inputWidth inputSpacing" placeholder="Last Name">
+
+
+                <label for="email" class="credentialLabel">Username</label>
+                <input type="email" name="username" class="forms inputWidth inputSpacing" placeholder="Username">
+
+
+                <label for="Password" class="credentialLabel">Password</label>
+                <input type="password" name="password" class="forms inputWidth inputSpacing" placeholder="Password">
+
+                <button type="submit" class="genBtn inputWidth inputSpacing">Register</button>
+
+                <!-- Put flex here so same line.  -->
+                <a href="/api/auth" id="login">Already registered? Click here.</a>
             </div>
-            <div class="form-group">
-                <label for="Password" id="passwordText">Password</label>
-                <input type="password" name="password" id="" class="forms">
-            </div>
-            <button type="submit" class="btn genBtn">Register</button>
-            <a href="/login" id="login">Already registered? Click here.</a>
+
         </form>
-        
+
     </div>
 </div>
 

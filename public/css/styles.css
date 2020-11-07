@@ -15,9 +15,11 @@ html {
   font-weight: 500;
 }
 
+/* 
 .container {
   margin: 0 auto;
-}
+  width: 100%;
+} */
 
 .hideOnLargeMedia {
   display: none;
@@ -37,20 +39,14 @@ body {
 
 .genBtn {
   background: green;
-  color: 0.3s ease;
-  margin: 10px 0px;
-  border: solid 0px;
+  border: none 0px;
   border-radius: 5px;
-  outline: none;
   color: white;
-  padding: 10px 14px;
 }
 
 .genBtn:hover {
-  color: white;
   background: #23d93a;
   cursor: pointer;
-  transition: 0.5;
 }
 
 /* Navigation bar */
@@ -108,10 +104,6 @@ a {
   font-family: "Libre Baskerville", serif;
 }
 
-.nav .current {
-  border-bottom: 1px green solid;
-}
-
 .blkBg {
   background: black;
 }
@@ -157,13 +149,22 @@ a {
   flex-direction: column;
   box-sizing: border-box;
 }
+/* .blogContainer,
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+} */
 
 .blogPost {
   display: inline-block;
   width: 50%;
   /* This is necessary to determine the size of the boxs for the blog messages to appear. */
   padding: 10px 2em 1em 2em;
-  border-radius: 15px;
+  border-radius: 5px;
   margin: 1.5%;
   /* The margin is added because without this, the overflow will clip the shadows.*/
 }
@@ -202,11 +203,11 @@ a {
 
 #postFunction {
   width: 34%;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 2rem;
   z-index: 3;
   top: 30%;
-  border: 1px solid silver;
+  /* border: 1px solid silver; */
 }
 
 #title {
@@ -223,7 +224,7 @@ a {
   padding: 10px; /* This targets the space inside of the textbars in Post */
   border: 1px solid silver;
   color: black;
-  border-radius: 15px;
+  border-radius: 10px;
   width: 90%;
   resize: none;
 }
@@ -242,48 +243,59 @@ a {
   padding: 10px 60px;
 }
 
-button:active {
-  background: green;
-}
-
 .template {
   background: white;
 }
 
 /* Login Page & Register page*/
 .mt5 {
-  width: 20%;
+  width: 25%;
   background: white;
   border-radius: 0.75rem;
   padding: 2rem 0rem 2rem 0rem;
-  border: solid 1px silver;
+  /* border: solid 1px silver; */
   margin-bottom: 15px;
 }
 
-.credBox {
-  box-sizing: box-border;
-  /* This keeps the box inside of the parent container completely. */
-  width: 90%;
+.inputWidth {
+  padding: 0.5em 0em;
+  width: 100%;
 }
 
-#loginText {
+.credBox {
+  /* box-sizing: box-border; */
+  /* This keeps the box inside of the parent container completely. */
+  width: 100%;
+  text-align: left;
+  
+}
+
+.flexCredentials {
+  padding-left: 2em;
+  padding-right: 2em;
+
+  
+}
+
+/* #loginText {
   display: block;
 }
 
 #passwordText {
   display: block;
-}
+} */
 
 .loginTitle {
-  margin-bottom: 0.5rem;
+  margin-bottom: .5em;
 }
 
 .forms {
-  border-radius: 7px;
-  margin: 10px 25px 20px 0px;
-  width: 90%;
-  border: 1px solid silver;
-  padding: 10px;
+  border-radius: 5px;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px green solid;
 }
 
 #login {
@@ -296,8 +308,19 @@ button:active {
   color: black;
 }
 
-#loginBtn {
-  justify-items: flex-end;
+.clickToChange {
+  color: green;
+}
+
+.inputSpacing{
+  box-sizing: border-box;
+  margin-bottom: 1.5em;
+  padding-left: .5em;
+}
+
+.credentialLabel{
+  font-size: 10px;
+  margin-bottom: 50em;
 }
 
 /* .hamburgerMenu:hover, .hamburgerMenu:focus,.hamburgerMenu:active{
@@ -326,14 +349,29 @@ footer {
 
   .navContainer {
     width: 100%;
+    padding: 1.5em 0em;
   }
 
-  li {
+  .mobileSpacing {
     padding: 5px;
   }
 
+  /* li {
+    padding: 5px;
+  } */
+
   nav {
-    padding: 10px;
+    padding: 1px;
+  }
+
+  .navMenu {
+    display: flex;
+  }
+
+  .mt5 {
+    width: 100%;
+    border-radius: 0.75rem;
+    margin-bottom: 15px;
   }
 
   .blogPost {
@@ -345,6 +383,11 @@ footer {
     /* This determines the size of the post when the viewport is smaller */
   }
 
+  .navHeaders {
+    padding: 0px 0px;
+    /* This increases the distance between the links on the navbar */
+  }
+
   .mt5 {
     width: 60%;
   }
@@ -354,7 +397,7 @@ footer {
   }
 
   .hideOnLargeMedia {
-    display: inline-block;
+    display: flex;
   }
 }
 
