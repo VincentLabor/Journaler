@@ -15,14 +15,14 @@ html {
   font-weight: 500;
 }
 
-/* 
-.container {
-  margin: 0 auto;
-  width: 100%;
-} */
-
 .hideOnLargeMedia {
   display: none;
+}
+
+.centerAndFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -51,6 +51,7 @@ body {
 
 /* Navigation bar */
 nav {
+  box-sizing: border-box;
   background: rgb(134, 170, 111);
   background: linear-gradient(
     90deg,
@@ -58,8 +59,16 @@ nav {
     rgba(71, 149, 73, 1) 44%,
     rgba(30, 124, 39, 1) 81%
   );
-  padding: 35px 0px 35px 35px;
-  margin-bottom: 1.5%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+}
+
+.logoHeader {
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  padding: 0em 1em;
 }
 
 .link {
@@ -78,10 +87,21 @@ nav {
 
 .navContainer {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: row;
+  width: 100%;
 }
 
+
+/* comment this out for tests */
 .navMenu {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  box-sizing: border-box;
+  justify-content: space-between;
   /* this removes the vertical scrollbar that is made from the overflow-x */
 }
 
@@ -149,15 +169,6 @@ a {
   flex-direction: column;
   box-sizing: border-box;
 }
-/* .blogContainer,
-.container {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  box-sizing: border-box;
-} */
 
 .blogPost {
   display: inline-block;
@@ -253,7 +264,7 @@ a {
   background: white;
   border-radius: 0.75rem;
   padding: 2rem 0rem 2rem 0rem;
-  /* border: solid 1px silver; */
+
   margin-bottom: 15px;
 }
 
@@ -267,31 +278,19 @@ a {
   /* This keeps the box inside of the parent container completely. */
   width: 100%;
   text-align: left;
-  
 }
 
 .flexCredentials {
   padding-left: 2em;
   padding-right: 2em;
-
-  
 }
 
-/* #loginText {
-  display: block;
-}
-
-#passwordText {
-  display: block;
-} */
-
-.loginTitle {
-  margin-bottom: .5em;
+.credentialHeading {
+  margin-bottom: 0.5em;
 }
 
 .forms {
   border-radius: 5px;
-
   border-top: none;
   border-left: none;
   border-right: none;
@@ -312,13 +311,12 @@ a {
   color: green;
 }
 
-.inputSpacing{
+.inputSpacing {
   box-sizing: border-box;
   margin-bottom: 1.5em;
-  padding-left: .5em;
 }
 
-.credentialLabel{
+.credentialLabel {
   font-size: 10px;
   margin-bottom: 50em;
 }
@@ -339,6 +337,64 @@ footer {
   justify-content: center;
   align-items: center;
   /* To vertically center the text in the footer, I first set the container to flex. After, I add justify content to center horizontally and align items to center vertically.  */
+}
+
+@media (max-width: 299px) and (min-width: 200px) {
+  .hideOnSmallMedia {
+    display: none;
+  }
+
+  .hideOnLargeMedia {
+    display: flex;
+  }
+
+  .mt5 {
+    width: 90%;
+    border-radius: 0.75rem;
+    margin-bottom: 15px;
+  }
+
+  /* Post on Home page */
+  .blogPost {
+    width: 75%;
+  }
+
+
+}
+@media (max-width: 369px) and (min-width: 300px) {
+  .navMenu {
+    display: flex;
+  }
+
+  .hideOnSmallMedia {
+    display: none;
+  }
+
+  .hideOnLargeMedia {
+    display: flex;
+  }
+
+  #logo {
+    font-size: 20px;
+  }
+
+  .hideHome {
+    display: none;
+  }
+
+  .mt5 {
+    width: 80%;
+    border-radius: 0.75rem;
+    margin-bottom: 15px;
+  }
+
+  .blogPost {
+    width: 80%;
+  }
+
+  .greeting {
+    padding-right: 1em;
+  }
 }
 
 /* Media queries */
@@ -366,10 +422,21 @@ footer {
 
   .navMenu {
     display: flex;
+    justify-content: space-between;
+    width: 40%;
   }
 
+  /* .mt5 {
+    width: 25%;
+    background: white;
+    border-radius: 0.75rem;
+    padding: 2rem 0rem 2rem 0rem;
+    /* border: solid 1px silver; */
+  /* margin-bottom: 15px; */
+  /* }  */
+
   .mt5 {
-    width: 100%;
+    width: 80%;
     border-radius: 0.75rem;
     margin-bottom: 15px;
   }
@@ -388,12 +455,8 @@ footer {
     /* This increases the distance between the links on the navbar */
   }
 
-  .mt5 {
-    width: 60%;
-  }
-
   .hideOnSmallMedia {
-    display: none;
+    display: none !important;
   }
 
   .hideOnLargeMedia {
@@ -401,65 +464,32 @@ footer {
   }
 }
 
-/* @media (max-width: 800px) {
-  .grid nav {
-    width: 100%;
-  }
-
-  .navContainer {
-    width: 100%;
-  }
-
-  nav {
-    padding: 10px;
-  }
-
-  li {
-    padding: 5px;
-  }
-
-  .blogPost {
+@media (max-width: 800px) and (min-width: 471px) {
+  /* Login */
+  .mt5 {
     width: 80%;
+    border-radius: 0.75rem;
+    margin-bottom: 15px;
   }
 
-  #postFunction {
-    width: 60%;
-  }
-
-  .mt5 {
-    width: 60%;
-  }
-} */
-
-/* @media (max-width: 1600px) {
-  .grid nav {
-    width: 100%;
-  }
-
-  nav {
-    padding: 10px;
-  }
-
-  .navContainer {
-    width: 100%;
-  }
-
-  li {
-    padding: 5px;
-  }
-
+  /* Post on Home page */
   .blogPost {
-    width: 50%;
+    width: 75%;
   }
+}
 
-  #postFunction {
-    width: 60%;
-  }
-
+@media (max-width: 1200px) and (min-width: 801px) {
+  /* Login */
   .mt5 {
-    width: 60%;
+    width: 70%;
+    border-radius: 0.75rem;
+    margin-bottom: 15px;
   }
-} */
 
-/* If the page keeps having issues with horizontal scroll, go into developer mode on chrome and delete divs to find what exactly is giving issues.  */
-/* Overflow-x is actually not very reliable as I have learned. */
+  /* Post on Home page */
+  .blogPost {
+    width: 75%;
+  }
+}
+
+

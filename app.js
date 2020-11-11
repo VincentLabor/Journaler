@@ -30,6 +30,7 @@ app.use(
     secret: process.env.CLIENT_SECRET,
     resave: false,
     saveUninitialized: false,
+    
   })
 );
 
@@ -40,6 +41,7 @@ app.use(passport.session());
 
 mongoose.connect("mongodb://localhost/blogDB", {
   useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 //This tests whether or not the mongoose db connects properly.
