@@ -176,14 +176,10 @@ a {
   padding: 10px 2em 1em 2em;
   border-radius: 5px;
   margin: 1.5%;
-  /* The margin is added because without this, the overflow will clip the shadows.*/
-}
-
-.blogPost:hover {
   border-radius: 7px;
   background: white;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.5s ease-in-out;
+  /* The margin is added because without this, the overflow will clip the shadows.*/
 }
 
 /* To center the blog posts in the center of the page, I had to set the html, body, and parent container of the blog post to 100% height. */
@@ -272,7 +268,7 @@ a {
   background: white;
   border-radius: 0.75rem;
   padding: 2rem 0rem 2rem 0rem;
-
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
 }
 
@@ -286,6 +282,7 @@ a {
   /* This keeps the box inside of the parent container completely. */
   width: 100%;
   text-align: left;
+  
 }
 
 .flexCredentials {

@@ -39,10 +39,23 @@ app.use(passport.initialize());
 //Because we will be using persistent logins, passport.session is called. This must be the order to call initialize and session.
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost/blogDB", {
+// try {
+//   mongoose.connect("mongodb://localhost/blogDB", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
+// } catch (error) {
+//   console.log(error.message)
+// }
+
+try {
+  mongoose.connect("mongodb+srv://AdminUser1:dEW73Xv2HxaxM1v1@journaler.naatq.mongodb.net/Journaler?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+} catch (error) {
+  console.log(error.message)
+}
 
 //This tests whether or not the mongoose db connects properly.
 var db = mongoose.connection;
