@@ -3,17 +3,18 @@
 <div class="Container">
     <form action="/api/userPost" method="post">
         <div id="postFunction" class="hiddenElement">
-                <div class="textinput">
-                    <input type="text" name="title" id="titleArea" class="textarea" placeholder="Title of your post" autocomplete="off">
-                </div>
-                <br>
-                <div class="">
-                    <textarea name="content" id="textContent" class="textarea" placeholder="Type in your thoughts"
-                        rows="5"></textarea>
-                    <!-- <input type="text" name="textContent" id="textContent" class="textarea"> -->
-                </div>
+            <div class="textinput">
+                <input type="text" name="title" id="titleArea" placeholder="Title of your post"
+                    autocomplete="off">
+            </div>
+            <br>
+            <div class="">
+                <textarea name="content" id="textContent" placeholder="Type in your thoughts"
+                    rows="5"></textarea>
+                <!-- <input type="text" name="textContent" id="textContent" class="textarea"> -->
+            </div>
             <div class="container">
-                <button id="postBtn" class = "genBtn" type="submit">Post</button>
+                <button id="postBtn" class="genBtn" type="submit">Post</button>
             </div>
         </div>
     </form>

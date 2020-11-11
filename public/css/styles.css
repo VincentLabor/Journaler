@@ -94,7 +94,6 @@ nav {
   width: 100%;
 }
 
-
 /* comment this out for tests */
 .navMenu {
   display: flex;
@@ -230,28 +229,37 @@ a {
   color: black;
 }
 
-.textarea {
+#titleArea {
+  font-size: 45px;
   display: block;
   padding: 10px; /* This targets the space inside of the textbars in Post */
-  border: 1px solid silver;
+  border: 0.5px solid silver;
   color: black;
   border-radius: 10px;
   width: 90%;
   resize: none;
 }
 
-#titleArea {
-  font-size: 45px;
-}
-
 #textContent {
   width: 90%;
-  height: 250px;
+  height: 15em;
   font-size: 15px;
+  margin-bottom: 1.5em;
+  display: block;
+  padding: 10px; /* This targets the space inside of the textbars in Post */
+  border: 0.5px solid silver;
+  color: black;
+  border-radius: 10px;
+  width: 90%;
+  resize: none;
 }
 
 #postBtn {
   padding: 10px 60px;
+}
+
+.hiddenElement {
+  border: 0.5px silver solid;
 }
 
 .template {
@@ -295,16 +303,13 @@ a {
   border-left: none;
   border-right: none;
   border-bottom: 1px green solid;
+  outline: none;
 }
 
 #login {
   justify-content: space-evenly;
   color: green;
   text-decoration: underline;
-}
-
-#login:hover {
-  color: black;
 }
 
 .clickToChange {
@@ -354,12 +359,47 @@ footer {
     margin-bottom: 15px;
   }
 
-  /* Post on Home page */
+  /* Create posts */
   .blogPost {
-    width: 75%;
+    width: 90%;
   }
 
+  .hiddenElement {
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+  }
 
+  #titleArea {
+    font-size: 20px;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px; /* This targets the space inside of the textbars in Post */
+    border: 0.5px silver solid;
+    color: black;
+    border-radius: 10px;
+    width: 100%;
+    resize: none;
+  }
+
+  #textContent {
+    width: 100%;
+    height: 15em;
+    font-size: 15px;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px; /* This targets the space inside of the textbars in Post */
+    border: 0.5px silver solid;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+  }
+
+  #postFunction {
+    width: 95%;
+    /* This determines the size of the post when the viewport is smaller */
+  }
 }
 @media (max-width: 369px) and (min-width: 300px) {
   .navMenu {
@@ -394,6 +434,48 @@ footer {
 
   .greeting {
     padding-right: 1em;
+  }
+
+  /* Create posts */
+  .blogPost {
+    width: 90%;
+  }
+
+  .hiddenElement {
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  #titleArea {
+    font-size: 20px;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px; /* This targets the space inside of the textbars in Post */
+    border: 0.5px silver solid;
+    color: black;
+    border-radius: 10px;
+    width: 100%;
+    resize: none;
+  }
+
+  #textContent {
+    width: 100%;
+    height: 15em;
+    font-size: 15px;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px; /* This targets the space inside of the textbars in Post */
+    border: 0.5px silver solid;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+  }
+
+  #postFunction {
+    width: 95%;
+    /* This determines the size of the post when the viewport is smaller */
   }
 }
 
@@ -462,6 +544,48 @@ footer {
   .hideOnLargeMedia {
     display: flex;
   }
+
+  /* Create posts */
+  .blogPost {
+    width: 90%;
+  }
+
+  .hiddenElement {
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  #titleArea {
+    font-size: 20px;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px; /* This targets the space inside of the textbars in Post */
+    border: 0.5px silver solid;
+    color: black;
+    border-radius: 10px;
+    width: 100%;
+    resize: none;
+  }
+
+  #textContent {
+    width: 100%;
+    height: 15em;
+    font-size: 15px;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px; /* This targets the space inside of the textbars in Post */
+    border: 0.5px silver solid;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+  }
+
+  #postFunction {
+    width: 95%;
+    /* This determines the size of the post when the viewport is smaller */
+  }
 }
 
 @media (max-width: 800px) and (min-width: 471px) {
@@ -475,6 +599,48 @@ footer {
   /* Post on Home page */
   .blogPost {
     width: 75%;
+  }
+
+  /* Create posts */
+  .blogPost {
+    width: 90%;
+  }
+
+  .hiddenElement {
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  #titleArea {
+    font-size: 20px;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px; /* This targets the space inside of the textbars in Post */
+    border: 0.5px silver solid;
+    color: black;
+    border-radius: 10px;
+    width: 100%;
+    resize: none;
+  }
+
+  #textContent {
+    width: 100%;
+    height: 15em;
+    font-size: 15px;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px; /* This targets the space inside of the textbars in Post */
+    border: 0.5px silver solid;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+  }
+
+  #postFunction {
+    width: 75%;
+    /* This determines the size of the post when the viewport is smaller */
   }
 }
 
@@ -490,6 +656,51 @@ footer {
   .blogPost {
     width: 75%;
   }
+
+    /* Post on Home page */
+    .blogPost {
+      width: 75%;
+    }
+  
+    /* Create posts */
+    .blogPost {
+      width: 90%;
+    }
+  
+    .hiddenElement {
+      border: none;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  
+    #titleArea {
+      font-size: 20px;
+      box-sizing: border-box;
+      display: block;
+      padding: 10px; /* This targets the space inside of the textbars in Post */
+      border: 0.5px silver solid;
+      color: black;
+      border-radius: 10px;
+      width: 100%;
+      resize: none;
+    }
+  
+    #textContent {
+      width: 100%;
+      height: 15em;
+      font-size: 15px;
+      margin-bottom: 1.5em;
+      box-sizing: border-box;
+      display: block;
+      padding: 10px; /* This targets the space inside of the textbars in Post */
+      border: 0.5px silver solid;
+      color: black;
+      border-radius: 10px;
+      resize: none;
+    }
+  
+    #postFunction {
+      width: 75%;
+      /* This determines the size of the post when the viewport is smaller */
+    }
 }
-
-
