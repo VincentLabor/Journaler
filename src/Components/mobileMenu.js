@@ -26,7 +26,3 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const router = express.Router();
 const User = require("../../models/User");
-
-// router.get('/', async (req,res)=>{
-//     await res.render
-// })

@@ -30,7 +30,6 @@ app.use(
     secret: process.env.CLIENT_SECRET,
     resave: false,
     saveUninitialized: false,
-    
   })
 );
 
@@ -49,12 +48,15 @@ app.use(passport.session());
 // }
 
 try {
-  mongoose.connect("mongodb+srv://AdminUser1:dEW73Xv2HxaxM1v1@journaler.naatq.mongodb.net/Journaler?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+  mongoose.connect(
+    "mongodb+srv://AdminUser1:dEW73Xv2HxaxM1v1@journaler.naatq.mongodb.net/Journaler?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  );
 } catch (error) {
-  console.log(error.message)
+  console.log(error.message);
 }
 
 //This tests whether or not the mongoose db connects properly.
@@ -90,4 +92,6 @@ app.get("/", async (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log(`The server is now online`));
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, () => console.log(`The server is now online`));

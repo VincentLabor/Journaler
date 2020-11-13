@@ -22,11 +22,11 @@ const User = require('../models/User');
 //   }
 // ));
 
-router.get("/", async (req, res) => {
+router.get("/", (req, res) => {
   res.render("login");
 });
 
-router.get("/", async (req,res)=>{
+router.get("/", (req,res)=>{
  const currentUser = User.findOne({firstName: req.user_id})
 })
 
@@ -50,19 +50,5 @@ router.post("/", (req, res) => {
     }
   });
 });
-
-
-//I dont know what this does. 
-// router.post("/", async (req, res, next) => {
-//     try {
-//       if (req.user) {
-//         await next();
-//       } else {
-//         res.redirect("/");
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   });
 
 module.exports = router;
